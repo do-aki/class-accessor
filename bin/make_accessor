@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+use dooaki\ClassAccessor\Command\MakeAccessor;
+
+call_user_func(function () {
+    foreach (array(
+                 dirname(__DIR__) . '/vendor/autoload.php',
+                 dirname(dirname(dirname(__DIR__))) . 'vendor/autoload.php',
+             ) as $file) {
+        if (file_exists($file)) {
+            /** @noinspection PhpIncludeInspection */
+            require $file;
+        }
+    }
+});
+
+MakeAccessor::run();

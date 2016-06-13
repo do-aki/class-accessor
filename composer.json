@@ -1,0 +1,42 @@
+{
+  "name": "dooaki/class-accessor",
+  "description": "provide type consrtrained accessor/mutator generation trait",
+  "keywords": [
+    "accessor", "mutator"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "do_aki",
+      "email": "do.hiroaki@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "symfony/polyfill-php70": "^1.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.8",
+    "satooshi/php-coveralls": "~1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "dooaki\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "dooaki\\Test\\": "tests/"
+    }
+  },
+  "bin": ["bin/make_accessor"],
+  "scripts": {
+    "test": "phpunit",
+    "make_primitive": "dooaki\\ClassAccessor\\Command\\MakePrimitive::run",
+    "update_primitive": [
+      "@make_primitive",
+      "git add src/ClassAccessor/PrimitiveAccessor.php",
+      "git commit -m 'update PrimitiveAccessor.php'"
+    ]
+  }
+}
