@@ -1,6 +1,9 @@
 dooaki\ClassAccessor
 =============
 
+[![Build Status](https://travis-ci.org/do-aki/class-accessor.svg?branch=master)](https://travis-ci.org/do-aki/class-accessor)
+[![Coverage Status](https://coveralls.io/repos/github/do-aki/class-accessor/badge.svg?branch=master)](https://coveralls.io/github/do-aki/class-accessor?branch=master)
+
 Requirements
 -------------
 * PHP 5.5 or later
