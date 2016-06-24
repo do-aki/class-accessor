@@ -46,7 +46,7 @@ trait AccessorCommon
                     __CLASS__,
                     debug_backtrace(false, 2)[1]['function'],
                     $type,
-                    self::_getType($value)
+                    AccessorUtility::getTypeName($value)
                 )
             );
         }
@@ -69,23 +69,9 @@ trait AccessorCommon
                     __CLASS__,
                     debug_backtrace(false, 2)[1]['function'],
                     $type,
-                    self::_getType($value)
+                    AccessorUtil::getTypeName($value)
                 )
             );
         }
-    }
-
-    /**
-     * return type string
-     *
-     * @param mixed $value target
-     * @return string type
-     */
-    private function _getType($value)
-    {
-        if (is_object($value)) {
-            return get_class($value);
-        }
-        return str_replace(['integer', 'double', 'boolean'], ['int', 'float', 'bool'], strtolower(gettype($value)));
     }
 }
