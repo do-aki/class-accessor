@@ -22,22 +22,23 @@ Synopsis
 
 ```php
 <?php
-
 use dooaki\ClassAccessor\Accessor;
 
-class Person {
+class Person
+{
 
     private $first_name;
     private $age;
 
     use Accessor {
-        getStringOrNull as public getFirstName;
-        setStringOrNull as public setFirstName;
-        getInt as public getAge;
-        setInt as public setAge;
+        _helperStringOrNullGetter as public getFirstName;
+        _helperStringOrNullSetter as public setFirstName;
+        _helperIntGetter as public getAge;
+        _helperIntSetter as public setAge;
     }
 
-    public function print() {
+    public function show()
+    {
         echo "{$this->first_name} ({$this->age})";
     }
 }
@@ -46,14 +47,13 @@ $p = new Person();
 $p->setFirstName('john');
 $p->setAge(23);
 
-var_dump($p->getFirstName()); // john
-var_dump($p->getAge()); // 23
-$p->print(); // john (23)
+var_dump($p->getFirstName()); // string(4) "john"
+var_dump($p->getAge()); // int(23)
+$p->show(); // john (23)
 
 
 $p->setFirstName(null); // ok name is nullable
-$p->setId("23"); // TypeError exception!
-
+$p->setAge("23"); // TypeError exception!
 ```
 
 Description
@@ -100,10 +100,10 @@ class DelayedDateTime {
     private $delay;
 
     use Accessor, DateAccessor {
-        getDateTimeInterfaceObject as public getDateTime;
-        setDateTimeInterfaceObject as public setDateTime;
-        getDateIntervalObjectOrNull as public getDelay;
-        setDateIntervalObjectOrNull as public setDelay;
+        _helperDateTimeInterfaceObjectGetter as public getDateTime;
+        _helperDateTimeInterfaceObjectSetter as public setDateTime;
+        _helperDateIntervalObjectOrNullGetter as public getDelay;
+        _helperDateIntervalObjectOrNullSetter as public setDelay;
     }
 
     public function __construct(DateTime $date_time)
