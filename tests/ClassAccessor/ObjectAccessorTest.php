@@ -43,10 +43,10 @@ class ObjectAccessorTest extends \PHPUnit_Framework_TestCase
         class ObjectAccessorTestImpl {
             
             use AccessorCommon, DateTimeAccessor {
-                getDateTimeObject as public getDateTime;
-                setDateTimeObject as public setDateTime;
-                getDateTimeInterfaceObjectOrNull as public getNullable;
-                setDateTimeInterfaceObjectOrNull as public setNullable;
+                _helperDateTimeObjectGetter as public getDateTime;
+                _helperDateTimeObjectSetter as public setDateTime;
+                _helperDateTimeInterfaceObjectOrNullGetter as public getNullable;
+                _helperDateTimeInterfaceObjectOrNullSetter as public setNullable;
             }
 
             public $date_time;

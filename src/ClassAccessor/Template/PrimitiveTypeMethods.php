@@ -27,7 +27,7 @@ class PrimitiveTypeMethods extends TemplateBase
     {
         return [];
     }
-    
+
     public function getClassComment()
     {
         return <<<'EOC'
@@ -45,15 +45,15 @@ EOC;
     /**
      * @return %TYPE%
      */
-    private function get%TYPE_U%() 
+    private function _helper%TYPE_U%Getter() 
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
         
         $value = $this->$name;
-        $this->_validatePrimitiveTypedProperty($value, '%TYPE%', false, false);
+        $this->validatePrimitiveType($value, '%TYPE%', 'Return value of %s::%s must be %s, %s returned');
         return $value;
     }
 _TPL;
@@ -66,14 +66,14 @@ _TPL;
      * @param %TYPE% $value
      * @return void
      */
-    private function set%TYPE_U%($value)
+    private function _helper%TYPE_U%Setter($value)
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validatePrimitiveTypedProperty($value, '%TYPE%', false, true);
+        $this->validatePrimitiveType($value, '%TYPE%');
         $this->$name = $value;
     }
 _TPL;
@@ -85,15 +85,15 @@ _TPL;
     /**
      * @return %TYPE%|null
      */
-    private function get%TYPE_U%OrNull()
+    private function _helper%TYPE_U%OrNullGetter()
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
         
         $value = $this->$name;
-        $this->_validatePrimitiveTypedProperty($value, '%TYPE%', true, false);
+        $this->validatePrimitiveTypeOrNull($value, '%TYPE%', 'Return value of %s::%s must be %s, %s returned');
         return $value;
     }
 _TPL;
@@ -107,14 +107,14 @@ _TPL;
      * @param %TYPE%|null $value
      * @return void
      */
-    private function set%TYPE_U%OrNull($value)
+    private function _helper%TYPE_U%OrNullSetter($value)
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validatePrimitiveTypedProperty($value, '%TYPE%', true, true);
+        $this->validatePrimitiveTypeOrNull($value, '%TYPE%');
         $this->$name = $value;
     }
 _TPL;

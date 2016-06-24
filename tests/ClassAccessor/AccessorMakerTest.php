@@ -24,10 +24,10 @@ class AccessorMakerTest extends \PHPUnit_Framework_TestCase
         eval ($m->makeAccessor(__NAMESPACE__, 'PrimitiveAccessorImpl', AccessorMaker::$PrimitiveTypes));
 
         $accessor = new \ReflectionClass(__NAMESPACE__ . '\\PrimitiveAccessorImpl');
-        $this->assertTrue($accessor->hasMethod('getInt'));
-        $this->assertTrue($accessor->hasMethod('getIntOrNull'));
-        $this->assertTrue($accessor->hasMethod('setInt'));
-        $this->assertTrue($accessor->hasMethod('setIntOrNull'));
+        $this->assertTrue($accessor->hasMethod('_helperIntGetter'));
+        $this->assertTrue($accessor->hasMethod('_helperIntOrNullGetter'));
+        $this->assertTrue($accessor->hasMethod('_helperIntSetter'));
+        $this->assertTrue($accessor->hasMethod('_helperIntOrNullSetter'));
     }
 
     public function testObjectAccessor()
@@ -38,14 +38,14 @@ class AccessorMakerTest extends \PHPUnit_Framework_TestCase
         $accessor = new \ReflectionClass(__NAMESPACE__ . '\\OpDateAccessorImpl');
         $this->assertTrue($accessor->isTrait());
 
-        $this->assertTrue($accessor->hasMethod('getDatePeriodObject'));
-        $this->assertTrue($accessor->hasMethod('getDatePeriodObjectOrNull'));
-        $this->assertTrue($accessor->hasMethod('setDatePeriodObject'));
-        $this->assertTrue($accessor->hasMethod('setDatePeriodObjectOrNull'));
+        $this->assertTrue($accessor->hasMethod('_helperDatePeriodObjectGetter'));
+        $this->assertTrue($accessor->hasMethod('_helperDatePeriodObjectOrNullGetter'));
+        $this->assertTrue($accessor->hasMethod('_helperDatePeriodObjectSetter'));
+        $this->assertTrue($accessor->hasMethod('_helperDatePeriodObjectOrNullSetter'));
 
-        $this->assertTrue($accessor->hasMethod('getDateIntervalObject'));
-        $this->assertTrue($accessor->hasMethod('getDateIntervalObjectOrNull'));
-        $this->assertTrue($accessor->hasMethod('setDateIntervalObject'));
-        $this->assertTrue($accessor->hasMethod('setDateIntervalObjectOrNull'));
+        $this->assertTrue($accessor->hasMethod('_helperDateIntervalObjectGetter'));
+        $this->assertTrue($accessor->hasMethod('_helperDateIntervalObjectOrNullGetter'));
+        $this->assertTrue($accessor->hasMethod('_helperDateIntervalObjectSetter'));
+        $this->assertTrue($accessor->hasMethod('_helperDateIntervalObjectOrNullSetter'));
     }
 }
