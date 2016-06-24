@@ -4,7 +4,7 @@ namespace dooaki\ClassAccessor\Template;
 
 /**
  * Class ObjectTypeMethods
- * 
+ *
  * @author  do_aki <do_aki@gmail.com>
  */
 class ObjectTypeMethods extends TemplateBase
@@ -52,7 +52,7 @@ EOC;
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $value = $this->$name;
@@ -73,7 +73,7 @@ _TPL;
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $this->_validateObjectTypedProperty($value, %TYPE%::class, false, true);
@@ -92,7 +92,7 @@ _TPL;
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $value = $this->$name;
@@ -114,7 +114,7 @@ _TPL;
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $this->_validateObjectTypedProperty($value, %TYPE%::class, true, true);

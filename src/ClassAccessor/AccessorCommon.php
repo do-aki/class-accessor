@@ -12,22 +12,6 @@ use TypeError;
 trait AccessorCommon
 {
     /**
-     * get accessing property name
-     *
-     * @return string
-     */
-    protected function _getAccessingPropertyName()
-    {
-        return strtolower(
-            preg_replace(
-                '/[A-Z]/',
-                '_$0',
-                lcfirst(preg_replace('/^(get|set)/', '', debug_backtrace(false, 2)[1]['function']))
-            )
-        );
-    }
-
-    /**
      * validator for primitive type
      *
      * @param mixed $value validating value
@@ -69,7 +53,7 @@ trait AccessorCommon
                     __CLASS__,
                     debug_backtrace(false, 2)[1]['function'],
                     $type,
-                    AccessorUtil::getTypeName($value)
+                    AccessorUtility::getTypeName($value)
                 )
             );
         }

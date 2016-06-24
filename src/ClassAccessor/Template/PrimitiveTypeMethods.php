@@ -27,7 +27,7 @@ class PrimitiveTypeMethods extends TemplateBase
     {
         return [];
     }
-    
+
     public function getClassComment()
     {
         return <<<'EOC'
@@ -49,7 +49,7 @@ EOC;
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
         
         $value = $this->$name;
@@ -70,7 +70,7 @@ _TPL;
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $this->_validatePrimitiveTypedProperty($value, '%TYPE%', false, true);
@@ -89,7 +89,7 @@ _TPL;
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
         
         $value = $this->$name;
@@ -111,7 +111,7 @@ _TPL;
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $this->_validatePrimitiveTypedProperty($value, '%TYPE%', true, true);

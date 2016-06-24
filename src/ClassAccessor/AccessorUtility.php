@@ -10,6 +10,22 @@ namespace dooaki\ClassAccessor;
 class AccessorUtility {
 
     /**
+     * get accessing property name
+     *
+     * @return string
+     */
+    public static function getAccessingPropertyName()
+    {
+        return strtolower(
+            preg_replace(
+                '/[A-Z]/',
+                '_$0',
+                lcfirst(preg_replace('/^(get|set)/', '', debug_backtrace(false, 2)[1]['function']))
+            )
+        );
+    }
+    
+    /**
      * return type string
      *
      * @param mixed $value target

@@ -29,6 +29,7 @@ abstract class TemplateBase implements TemplateInterface {
         $ns = $this->getLibraryNamespace();
         if ($namespace !== $ns) {
             array_unshift($use_list, $ns . "\\AccessorCommonAbstract");
+            array_unshift($use_list, $ns . "\\AccessorUtility");
         }
 
         $code = "namespace {$namespace};\n\n";
@@ -58,7 +59,7 @@ abstract class TemplateBase implements TemplateInterface {
 
         return $code;
     }
-    
+
     abstract public function generateCode($type);
     abstract public function getClassComment();
     abstract public function getUseList();

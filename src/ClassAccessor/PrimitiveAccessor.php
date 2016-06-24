@@ -17,7 +17,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
         
         $value = $this->$name;
@@ -33,7 +33,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $this->_validatePrimitiveTypedProperty($value, 'int', false, true);
@@ -47,7 +47,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
         
         $value = $this->$name;
@@ -63,7 +63,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $this->_validatePrimitiveTypedProperty($value, 'int', true, true);
@@ -77,7 +77,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
         
         $value = $this->$name;
@@ -93,7 +93,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $this->_validatePrimitiveTypedProperty($value, 'float', false, true);
@@ -107,7 +107,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
         
         $value = $this->$name;
@@ -123,7 +123,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $this->_validatePrimitiveTypedProperty($value, 'float', true, true);
@@ -137,7 +137,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
         
         $value = $this->$name;
@@ -153,7 +153,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $this->_validatePrimitiveTypedProperty($value, 'string', false, true);
@@ -167,7 +167,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
         
         $value = $this->$name;
@@ -183,7 +183,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $this->_validatePrimitiveTypedProperty($value, 'string', true, true);
@@ -197,7 +197,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
         
         $value = $this->$name;
@@ -213,7 +213,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $this->_validatePrimitiveTypedProperty($value, 'bool', false, true);
@@ -227,7 +227,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
         
         $value = $this->$name;
@@ -243,7 +243,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $this->_validatePrimitiveTypedProperty($value, 'bool', true, true);
@@ -257,7 +257,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
         
         $value = $this->$name;
@@ -273,7 +273,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $this->_validatePrimitiveTypedProperty($value, 'array', false, true);
@@ -287,7 +287,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
         
         $value = $this->$name;
@@ -303,7 +303,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $this->_validatePrimitiveTypedProperty($value, 'array', true, true);
@@ -317,7 +317,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
         
         $value = $this->$name;
@@ -333,7 +333,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $this->_validatePrimitiveTypedProperty($value, 'callable', false, true);
@@ -347,7 +347,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
         
         $value = $this->$name;
@@ -363,7 +363,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $this->_validatePrimitiveTypedProperty($value, 'callable', true, true);
@@ -377,7 +377,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
         
         $value = $this->$name;
@@ -393,7 +393,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $this->_validatePrimitiveTypedProperty($value, 'resource', false, true);
@@ -407,7 +407,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
         
         $value = $this->$name;
@@ -423,7 +423,7 @@ trait PrimitiveAccessor {
     {
         static $name;
         if (!$name) {
-            $name = $this->_getAccessingPropertyName();
+            $name = AccessorUtility::getAccessingPropertyName();
         }
 
         $this->_validatePrimitiveTypedProperty($value, 'resource', true, true);
