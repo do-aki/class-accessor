@@ -45,7 +45,7 @@ EOC;
     /**
      * @return %TYPE%
      */
-    private function get%TYPE_U%() 
+    private function _helper%TYPE_U%Getter() 
     {
         static $name;
         if (!$name) {
@@ -66,7 +66,7 @@ _TPL;
      * @param %TYPE% $value
      * @return void
      */
-    private function set%TYPE_U%($value)
+    private function _helper%TYPE_U%Setter($value)
     {
         static $name;
         if (!$name) {
@@ -85,7 +85,7 @@ _TPL;
     /**
      * @return %TYPE%|null
      */
-    private function get%TYPE_U%OrNull()
+    private function _helper%TYPE_U%OrNullGetter()
     {
         static $name;
         if (!$name) {
@@ -107,7 +107,7 @@ _TPL;
      * @param %TYPE%|null $value
      * @return void
      */
-    private function set%TYPE_U%OrNull($value)
+    private function _helper%TYPE_U%OrNullSetter($value)
     {
         static $name;
         if (!$name) {

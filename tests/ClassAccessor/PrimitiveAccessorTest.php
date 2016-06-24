@@ -47,13 +47,13 @@ class PrimitiveAccessorTest extends \PHPUnit_Framework_TestCase
             $u_type = ucfirst($type);
 
             $vars[] = 'public $' . self::_makePropertyName($type, false) . '_var;';
-            $props[] = "get{$u_type} as public " . self::_makeMethodName('get', $type, false) . ";";
-            $props[] = "set{$u_type} as public " . self::_makeMethodName('set', $type, false) . ";";
+            $props[] = "_helper{$u_type}Getter as public " . self::_makeMethodName('get', $type, false) . ";";
+            $props[] = "_helper{$u_type}Setter as public " . self::_makeMethodName('set', $type, false) . ";";
 
 
             $vars[] = 'public $' . self::_makePropertyName($type, true) . '_var;';
-            $props[] = "get{$u_type}OrNull as public " . self::_makeMethodName('get', $type, true) . ";";
-            $props[] = "set{$u_type}OrNull as public " . self::_makeMethodName('set', $type, true) . ";";
+            $props[] = "_helper{$u_type}OrNullGetter as public " . self::_makeMethodName('get', $type, true) . ";";
+            $props[] = "_helper{$u_type}OrNullSetter as public " . self::_makeMethodName('set', $type, true) . ";";
         }
 
         eval(

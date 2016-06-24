@@ -48,7 +48,7 @@ EOC;
     /**
      * @return %TYPE%
      */
-    private function get%TYPE%Object()
+    private function _helper%TYPE%ObjectGetter()
     {
         static $name;
         if (!$name) {
@@ -69,7 +69,7 @@ _TPL;
      * @param %TYPE% $value
      * @return void
      */
-    private function set%TYPE%Object($value)
+    private function _helper%TYPE%ObjectSetter($value)
     {
         static $name;
         if (!$name) {
@@ -88,7 +88,7 @@ _TPL;
     /**
      * @return %TYPE%|null
      */
-    private function get%TYPE%ObjectOrNull()
+    private function _helper%TYPE%ObjectOrNullGetter()
     {
         static $name;
         if (!$name) {
@@ -110,7 +110,7 @@ _TPL;
      * @param %TYPE%|null $value
      * @return void
      */
-    private function set%TYPE%ObjectOrNull($value)
+    private function _helper%TYPE%ObjectOrNullSetter($value)
     {
         static $name;
         if (!$name) {
