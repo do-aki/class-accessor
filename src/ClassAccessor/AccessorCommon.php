@@ -16,17 +16,64 @@ trait AccessorCommon
      *
      * @param mixed $value validating value
      * @param string $type expected type
-     * @param bool $nullable true if validating value is nullable
-     * @param bool $is_call true if call, false if return
+     * @param string $message_format exception message format
      * @throws TypeError
      */
-    protected function _validatePrimitiveTypedProperty($value, $type, $nullable, $is_call)
+    protected function validatePrimitiveType($value, $type, $message_format = 'Argument 1 passed to %s::%s must be %s, %s given')
     {
         $validator = "is_{$type}";
-        if (!($nullable && $value === null) && !$validator($value)) {
+        if (!$validator($value)) {
             throw new TypeError(
                 sprintf(
-                    ($is_call ? '%s::%s must be %s, %s given' : 'Return value of %s::%s must be %s, %s returned'),
+                    $message_format,
+                    __CLASS__,
+                    debug_backtrace(false, 2)[1]['function'],
+                    $type,
+                    AccessorUtility::getTypeName($value)
+                )
+            );
+        }
+
+    }
+
+    /**
+     * validator for primitive type
+     *
+     * @param mixed $value validating value
+     * @param string $type expected type
+     * @param string $message_format exception message format
+     * @throws TypeError
+     */
+    protected function validatePrimitiveTypeOrNull($value, $type, $message_format = 'Argument 1 passed to %s::%s must be %s, %s given')
+    {
+        $validator = "is_{$type}";
+        if ($value !== null && !$validator($value)) {
+            throw new TypeError(
+                sprintf(
+                    $message_format,
+                    __CLASS__,
+                    debug_backtrace(false, 2)[1]['function'],
+                    $type,
+                    AccessorUtil::getTypeName($value)
+                )
+            );
+        }
+    }
+
+    /**
+     * validator for object type
+     *
+     * @param mixed $value validating value
+     * @param string $type expected type
+     * @param string $message_format exception message format
+     * @throws TypeError
+     */
+    protected function validateObjectType($value, $type, $message_format = '%s::%s must be an instance of %s, %s given')
+    {
+        if (!is_a($value, $type)) {
+            throw new TypeError(
+                sprintf(
+                    $message_format,
                     __CLASS__,
                     debug_backtrace(false, 2)[1]['function'],
                     $type,
@@ -41,15 +88,14 @@ trait AccessorCommon
      *
      * @param mixed $value validating value
      * @param string $type expected type
-     * @param bool $nullable true if validating value is nullable
      * @throws TypeError
      */
-    protected function _validateObjectTypedProperty($value, $type, $nullable, $is_call)
+    protected function validateObjectTypeOrNull($value, $type, $message_format = '%s::%s must be an instance of %s, %s given')
     {
-        if (!($nullable && $value === null) && !is_a($value, $type)) {
+        if ($value !== null && !is_a($value, $type)) {
             throw new TypeError(
                 sprintf(
-                    ($is_call ? '%s::%s must be an instance of %s, %s given' : 'Return value of %s::%s must be an instance of %s, %s returned'),
+                    $message_format,
                     __CLASS__,
                     debug_backtrace(false, 2)[1]['function'],
                     $type,
@@ -58,4 +104,5 @@ trait AccessorCommon
             );
         }
     }
+
 }

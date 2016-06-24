@@ -53,7 +53,7 @@ EOC;
         }
         
         $value = $this->$name;
-        $this->_validatePrimitiveTypedProperty($value, '%TYPE%', false, false);
+        $this->validatePrimitiveType($value, '%TYPE%', 'Return value of %s::%s must be %s, %s returned');
         return $value;
     }
 _TPL;
@@ -73,7 +73,7 @@ _TPL;
             $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validatePrimitiveTypedProperty($value, '%TYPE%', false, true);
+        $this->validatePrimitiveType($value, '%TYPE%');
         $this->$name = $value;
     }
 _TPL;
@@ -93,7 +93,7 @@ _TPL;
         }
         
         $value = $this->$name;
-        $this->_validatePrimitiveTypedProperty($value, '%TYPE%', true, false);
+        $this->validatePrimitiveTypeOrNull($value, '%TYPE%', 'Return value of %s::%s must be %s, %s returned');
         return $value;
     }
 _TPL;
@@ -114,7 +114,7 @@ _TPL;
             $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validatePrimitiveTypedProperty($value, '%TYPE%', true, true);
+        $this->validatePrimitiveTypeOrNull($value, '%TYPE%');
         $this->$name = $value;
     }
 _TPL;

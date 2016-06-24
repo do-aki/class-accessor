@@ -9,7 +9,9 @@ namespace dooaki\ClassAccessor;
  */
 trait AccessorCommonAbstract
 {
-    abstract protected function _validatePrimitiveTypedProperty($value, $type, $nullable, $is_call);
+    abstract protected function validatePrimitiveType($value, $type, $message_format = '');
+    abstract protected function validatePrimitiveTypeOrNull($value, $type, $message_format = '');
 
-    abstract protected function _validateObjectTypedProperty($value, $type, $nullable, $is_call);
+    abstract protected function validateObjectType($value, $type, $message_format = '');
+    abstract protected function validateObjectTypeOrNull($value, $type, $message_format = '');
 }

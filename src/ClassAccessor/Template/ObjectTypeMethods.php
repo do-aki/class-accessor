@@ -56,7 +56,7 @@ EOC;
         }
 
         $value = $this->$name;
-        $this->_validateObjectTypedProperty($value, %TYPE%::class, false, false);
+        $this->validateObjectType($value, %TYPE%::class, 'Return value of %s::%s must be an instance of %s, %s returned');
         return $value;
     }
 _TPL;
@@ -76,7 +76,7 @@ _TPL;
             $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validateObjectTypedProperty($value, %TYPE%::class, false, true);
+        $this->validateObjectType($value, %TYPE%::class);
         $this->$name = $value;
     }
 _TPL;
@@ -96,7 +96,7 @@ _TPL;
         }
 
         $value = $this->$name;
-        $this->_validateObjectTypedProperty($value, %TYPE%::class, true, false);
+        $this->validateObjectTypeOrNull($value, %TYPE%::class, 'Return value of %s::%s must be an instance of %s, %s returned');
         return $value;
     }
 _TPL;
@@ -117,7 +117,7 @@ _TPL;
             $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validateObjectTypedProperty($value, %TYPE%::class, true, true);
+        $this->validateObjectTypeOrNull($value, %TYPE%::class);
         $this->$name = $value;
     }
 _TPL;

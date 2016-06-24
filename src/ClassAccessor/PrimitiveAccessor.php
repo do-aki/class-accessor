@@ -21,7 +21,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->_validatePrimitiveTypedProperty($value, 'int', false, false);
+        $this->validatePrimitiveType($value, 'int', 'Return value of %s::%s must be %s, %s returned');
         return $value;
     }
 
@@ -36,7 +36,7 @@ trait PrimitiveAccessor {
             $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validatePrimitiveTypedProperty($value, 'int', false, true);
+        $this->validatePrimitiveType($value, 'int');
         $this->$name = $value;
     }
 
@@ -51,7 +51,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->_validatePrimitiveTypedProperty($value, 'int', true, false);
+        $this->validatePrimitiveTypeOrNull($value, 'int', 'Return value of %s::%s must be %s, %s returned');
         return $value;
     }
 
@@ -66,7 +66,7 @@ trait PrimitiveAccessor {
             $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validatePrimitiveTypedProperty($value, 'int', true, true);
+        $this->validatePrimitiveTypeOrNull($value, 'int');
         $this->$name = $value;
     }
 
@@ -81,7 +81,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->_validatePrimitiveTypedProperty($value, 'float', false, false);
+        $this->validatePrimitiveType($value, 'float', 'Return value of %s::%s must be %s, %s returned');
         return $value;
     }
 
@@ -96,7 +96,7 @@ trait PrimitiveAccessor {
             $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validatePrimitiveTypedProperty($value, 'float', false, true);
+        $this->validatePrimitiveType($value, 'float');
         $this->$name = $value;
     }
 
@@ -111,7 +111,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->_validatePrimitiveTypedProperty($value, 'float', true, false);
+        $this->validatePrimitiveTypeOrNull($value, 'float', 'Return value of %s::%s must be %s, %s returned');
         return $value;
     }
 
@@ -126,7 +126,7 @@ trait PrimitiveAccessor {
             $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validatePrimitiveTypedProperty($value, 'float', true, true);
+        $this->validatePrimitiveTypeOrNull($value, 'float');
         $this->$name = $value;
     }
 
@@ -141,7 +141,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->_validatePrimitiveTypedProperty($value, 'string', false, false);
+        $this->validatePrimitiveType($value, 'string', 'Return value of %s::%s must be %s, %s returned');
         return $value;
     }
 
@@ -156,7 +156,7 @@ trait PrimitiveAccessor {
             $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validatePrimitiveTypedProperty($value, 'string', false, true);
+        $this->validatePrimitiveType($value, 'string');
         $this->$name = $value;
     }
 
@@ -171,7 +171,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->_validatePrimitiveTypedProperty($value, 'string', true, false);
+        $this->validatePrimitiveTypeOrNull($value, 'string', 'Return value of %s::%s must be %s, %s returned');
         return $value;
     }
 
@@ -186,7 +186,7 @@ trait PrimitiveAccessor {
             $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validatePrimitiveTypedProperty($value, 'string', true, true);
+        $this->validatePrimitiveTypeOrNull($value, 'string');
         $this->$name = $value;
     }
 
@@ -201,7 +201,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->_validatePrimitiveTypedProperty($value, 'bool', false, false);
+        $this->validatePrimitiveType($value, 'bool', 'Return value of %s::%s must be %s, %s returned');
         return $value;
     }
 
@@ -216,7 +216,7 @@ trait PrimitiveAccessor {
             $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validatePrimitiveTypedProperty($value, 'bool', false, true);
+        $this->validatePrimitiveType($value, 'bool');
         $this->$name = $value;
     }
 
@@ -231,7 +231,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->_validatePrimitiveTypedProperty($value, 'bool', true, false);
+        $this->validatePrimitiveTypeOrNull($value, 'bool', 'Return value of %s::%s must be %s, %s returned');
         return $value;
     }
 
@@ -246,7 +246,7 @@ trait PrimitiveAccessor {
             $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validatePrimitiveTypedProperty($value, 'bool', true, true);
+        $this->validatePrimitiveTypeOrNull($value, 'bool');
         $this->$name = $value;
     }
 
@@ -261,7 +261,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->_validatePrimitiveTypedProperty($value, 'array', false, false);
+        $this->validatePrimitiveType($value, 'array', 'Return value of %s::%s must be %s, %s returned');
         return $value;
     }
 
@@ -276,7 +276,7 @@ trait PrimitiveAccessor {
             $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validatePrimitiveTypedProperty($value, 'array', false, true);
+        $this->validatePrimitiveType($value, 'array');
         $this->$name = $value;
     }
 
@@ -291,7 +291,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->_validatePrimitiveTypedProperty($value, 'array', true, false);
+        $this->validatePrimitiveTypeOrNull($value, 'array', 'Return value of %s::%s must be %s, %s returned');
         return $value;
     }
 
@@ -306,7 +306,7 @@ trait PrimitiveAccessor {
             $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validatePrimitiveTypedProperty($value, 'array', true, true);
+        $this->validatePrimitiveTypeOrNull($value, 'array');
         $this->$name = $value;
     }
 
@@ -321,7 +321,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->_validatePrimitiveTypedProperty($value, 'callable', false, false);
+        $this->validatePrimitiveType($value, 'callable', 'Return value of %s::%s must be %s, %s returned');
         return $value;
     }
 
@@ -336,7 +336,7 @@ trait PrimitiveAccessor {
             $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validatePrimitiveTypedProperty($value, 'callable', false, true);
+        $this->validatePrimitiveType($value, 'callable');
         $this->$name = $value;
     }
 
@@ -351,7 +351,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->_validatePrimitiveTypedProperty($value, 'callable', true, false);
+        $this->validatePrimitiveTypeOrNull($value, 'callable', 'Return value of %s::%s must be %s, %s returned');
         return $value;
     }
 
@@ -366,7 +366,7 @@ trait PrimitiveAccessor {
             $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validatePrimitiveTypedProperty($value, 'callable', true, true);
+        $this->validatePrimitiveTypeOrNull($value, 'callable');
         $this->$name = $value;
     }
 
@@ -381,7 +381,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->_validatePrimitiveTypedProperty($value, 'resource', false, false);
+        $this->validatePrimitiveType($value, 'resource', 'Return value of %s::%s must be %s, %s returned');
         return $value;
     }
 
@@ -396,7 +396,7 @@ trait PrimitiveAccessor {
             $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validatePrimitiveTypedProperty($value, 'resource', false, true);
+        $this->validatePrimitiveType($value, 'resource');
         $this->$name = $value;
     }
 
@@ -411,7 +411,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->_validatePrimitiveTypedProperty($value, 'resource', true, false);
+        $this->validatePrimitiveTypeOrNull($value, 'resource', 'Return value of %s::%s must be %s, %s returned');
         return $value;
     }
 
@@ -426,7 +426,7 @@ trait PrimitiveAccessor {
             $name = AccessorUtility::getAccessingPropertyName();
         }
 
-        $this->_validatePrimitiveTypedProperty($value, 'resource', true, true);
+        $this->validatePrimitiveTypeOrNull($value, 'resource');
         $this->$name = $value;
     }
 
