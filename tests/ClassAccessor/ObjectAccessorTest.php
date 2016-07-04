@@ -101,6 +101,28 @@ _CODE
         $this->test->getDateTime();
     }
 
+    public function test_throw_exception_if_send_invalid_type_for_nullable()
+    {
+        $this->setExpectedException(
+            TypeError::class,
+            __NAMESPACE__ . '\\ObjectAccessorTestImpl::setNullable must be an instance of DateTimeInterface, stdClass given'
+        );
+
+        $this->test->setNullable(new stdClass);
+    }
+
+    public function test_throw_exception_if_return_invalid_type_for_nullable()
+    {
+        $this->setExpectedException(
+            TypeError::class,
+            'Return value of ' . __NAMESPACE__ . '\\ObjectAccessorTestImpl::getNullable must be an instance of DateTimeInterface, stdClass returned'
+        );
+
+        $this->test->nullable = new stdClass;
+        $this->test->getNullable();
+    }
+
+
     public function test_settable_null()
     {
         $this->test->nullable = new DateTime();
