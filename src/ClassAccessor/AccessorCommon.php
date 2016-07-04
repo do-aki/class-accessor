@@ -54,7 +54,7 @@ trait AccessorCommon
                     __CLASS__,
                     debug_backtrace(false, 2)[1]['function'],
                     $type,
-                    AccessorUtil::getTypeName($value)
+                    AccessorUtility::getTypeName($value)
                 )
             );
         }
