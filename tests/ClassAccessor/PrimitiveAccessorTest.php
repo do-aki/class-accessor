@@ -4,6 +4,7 @@ namespace dooaki\Test\ClassAccessor;
 
 use dooaki\ClassAccessor\Accessor;
 use dooaki\ClassAccessor\AccessorMaker;
+use stdClass;
 use TypeError;
 
 class PrimitiveAccessorTest extends \PHPUnit_Framework_TestCase
@@ -192,6 +193,18 @@ class PrimitiveAccessorTest extends \PHPUnit_Framework_TestCase
 
         $setter = self::_makeMethodName('set', $type, false);
         $this->test->$setter($ng_value);
+    }
+
+    /**
+     * @dataProvider provideAllTypes
+     * @param string $type
+     */
+    public function test_throw_exception_if_send_object($type)
+    {
+        $this->setExpectedException(TypeError::class);
+
+        $setter = self::_makeMethodName('set', $type, true);
+        $this->test->$setter(new stdClass());
     }
 
     /**
