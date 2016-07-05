@@ -21,7 +21,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->validatePrimitiveType($value, 'int', 'Return value of %s::%s must be %s, %s returned');
+        $this->validatePrimitiveType($value, 'int', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
     }
 
@@ -51,7 +51,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->validatePrimitiveTypeOrNull($value, 'int', 'Return value of %s::%s must be %s, %s returned');
+        $this->validatePrimitiveTypeOrNull($value, 'int', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
     }
 
@@ -81,7 +81,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->validatePrimitiveType($value, 'float', 'Return value of %s::%s must be %s, %s returned');
+        $this->validatePrimitiveType($value, 'float', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
     }
 
@@ -111,7 +111,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->validatePrimitiveTypeOrNull($value, 'float', 'Return value of %s::%s must be %s, %s returned');
+        $this->validatePrimitiveTypeOrNull($value, 'float', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
     }
 
@@ -141,7 +141,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->validatePrimitiveType($value, 'string', 'Return value of %s::%s must be %s, %s returned');
+        $this->validatePrimitiveType($value, 'string', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
     }
 
@@ -171,7 +171,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->validatePrimitiveTypeOrNull($value, 'string', 'Return value of %s::%s must be %s, %s returned');
+        $this->validatePrimitiveTypeOrNull($value, 'string', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
     }
 
@@ -201,7 +201,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->validatePrimitiveType($value, 'bool', 'Return value of %s::%s must be %s, %s returned');
+        $this->validatePrimitiveType($value, 'bool', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
     }
 
@@ -231,7 +231,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->validatePrimitiveTypeOrNull($value, 'bool', 'Return value of %s::%s must be %s, %s returned');
+        $this->validatePrimitiveTypeOrNull($value, 'bool', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
     }
 
@@ -261,7 +261,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->validatePrimitiveType($value, 'array', 'Return value of %s::%s must be %s, %s returned');
+        $this->validatePrimitiveType($value, 'array', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
     }
 
@@ -291,7 +291,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->validatePrimitiveTypeOrNull($value, 'array', 'Return value of %s::%s must be %s, %s returned');
+        $this->validatePrimitiveTypeOrNull($value, 'array', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
     }
 
@@ -321,7 +321,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->validatePrimitiveType($value, 'callable', 'Return value of %s::%s must be %s, %s returned');
+        $this->validatePrimitiveType($value, 'callable', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
     }
 
@@ -351,7 +351,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->validatePrimitiveTypeOrNull($value, 'callable', 'Return value of %s::%s must be %s, %s returned');
+        $this->validatePrimitiveTypeOrNull($value, 'callable', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
     }
 
@@ -381,7 +381,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->validatePrimitiveType($value, 'resource', 'Return value of %s::%s must be %s, %s returned');
+        $this->validatePrimitiveType($value, 'resource', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
     }
 
@@ -411,7 +411,7 @@ trait PrimitiveAccessor {
         }
         
         $value = $this->$name;
-        $this->validatePrimitiveTypeOrNull($value, 'resource', 'Return value of %s::%s must be %s, %s returned');
+        $this->validatePrimitiveTypeOrNull($value, 'resource', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
     }
 

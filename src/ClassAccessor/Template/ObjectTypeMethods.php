@@ -56,7 +56,7 @@ EOC;
         }
 
         $value = $this->$name;
-        $this->validateObjectType($value, %TYPE%::class, 'Return value of %s::%s must be an instance of %s, %s returned');
+        $this->validateObjectType($value, %TYPE%::class, AccessorUtility::OBJECT_GETTER_MESSAGE_FORMAT);
         return $value;
     }
 _TPL;
@@ -96,7 +96,7 @@ _TPL;
         }
 
         $value = $this->$name;
-        $this->validateObjectTypeOrNull($value, %TYPE%::class, 'Return value of %s::%s must be an instance of %s, %s returned');
+        $this->validateObjectTypeOrNull($value, %TYPE%::class, AccessorUtility::OBJECT_GETTER_MESSAGE_FORMAT);
         return $value;
     }
 _TPL;
