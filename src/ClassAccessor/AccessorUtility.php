@@ -15,7 +15,7 @@ class AccessorUtility {
     const PRIMITIVE_GETTER_MESSAGE_FORMAT = 'Return value of %s::%s must be %s, %s returned';
 
     /** @var string message format for object typed setter */
-    const OBJECT_SETTER_MESSAGE_FORMAT = '%s::%s must be an instance of %s, %s given';
+    const OBJECT_SETTER_MESSAGE_FORMAT = 'Argument 1 passed to %s::%s must be an instance of %s, %s given';
     /** @var string message format for object typed getter */
     const OBJECT_GETTER_MESSAGE_FORMAT = 'Return value of %s::%s must be an instance of %s, %s returned';
 
