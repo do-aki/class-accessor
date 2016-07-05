@@ -53,7 +53,7 @@ EOC;
         }
         
         $value = $this->$name;
-        $this->validatePrimitiveType($value, '%TYPE%', 'Return value of %s::%s must be %s, %s returned');
+        $this->validatePrimitiveType($value, '%TYPE%', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
     }
 _TPL;
@@ -93,7 +93,7 @@ _TPL;
         }
         
         $value = $this->$name;
-        $this->validatePrimitiveTypeOrNull($value, '%TYPE%', 'Return value of %s::%s must be %s, %s returned');
+        $this->validatePrimitiveTypeOrNull($value, '%TYPE%', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
     }
 _TPL;

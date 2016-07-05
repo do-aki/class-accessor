@@ -19,7 +19,7 @@ trait AccessorCommon
      * @param string $message_format exception message format
      * @throws TypeError
      */
-    protected function validatePrimitiveType($value, $type, $message_format = 'Argument 1 passed to %s::%s must be %s, %s given')
+    protected function validatePrimitiveType($value, $type, $message_format = AccessorUtility::PRIMITIVE_SETTER_MESSAGE_FORMAT)
     {
         $validator = "is_{$type}";
         if (!$validator($value)) {
@@ -44,7 +44,7 @@ trait AccessorCommon
      * @param string $message_format exception message format
      * @throws TypeError
      */
-    protected function validatePrimitiveTypeOrNull($value, $type, $message_format = 'Argument 1 passed to %s::%s must be %s, %s given')
+    protected function validatePrimitiveTypeOrNull($value, $type, $message_format = AccessorUtility::PRIMITIVE_SETTER_MESSAGE_FORMAT)
     {
         $validator = "is_{$type}";
         if ($value !== null && !$validator($value)) {
@@ -68,7 +68,7 @@ trait AccessorCommon
      * @param string $message_format exception message format
      * @throws TypeError
      */
-    protected function validateObjectType($value, $type, $message_format = '%s::%s must be an instance of %s, %s given')
+    protected function validateObjectType($value, $type, $message_format = AccessorUtility::OBJECT_SETTER_MESSAGE_FORMAT)
     {
         if (!is_a($value, $type)) {
             throw new TypeError(
@@ -88,9 +88,10 @@ trait AccessorCommon
      *
      * @param mixed $value validating value
      * @param string $type expected type
+     * @param string $message_format exception message format
      * @throws TypeError
      */
-    protected function validateObjectTypeOrNull($value, $type, $message_format = '%s::%s must be an instance of %s, %s given')
+    protected function validateObjectTypeOrNull($value, $type, $message_format = AccessorUtility::OBJECT_SETTER_MESSAGE_FORMAT)
     {
         if ($value !== null && !is_a($value, $type)) {
             throw new TypeError(
