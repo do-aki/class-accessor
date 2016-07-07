@@ -28,7 +28,7 @@ abstract class TemplateBase implements TemplateInterface {
         $use_list = $this->getUseList();
         $ns = $this->getLibraryNamespace();
         if ($namespace !== $ns) {
-            array_unshift($use_list, $ns . "\\AccessorCommonAbstract");
+            array_unshift($use_list, $ns . "\\TypeValidatorAbstract");
             array_unshift($use_list, $ns . "\\AccessorUtility");
         }
 
@@ -44,7 +44,7 @@ abstract class TemplateBase implements TemplateInterface {
 
         $code .= $this->getClassComment() . "\n";
         $code .= "trait {$trait_name} {\n\n";
-        $code .= "    use AccessorCommonAbstract;\n\n";
+        $code .= "    use TypeValidatorAbstract;\n\n";
         $code .= $methods;
         $code .= "}\n";
         return $code;

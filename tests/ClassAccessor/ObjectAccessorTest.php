@@ -5,7 +5,7 @@ namespace dooaki\Test\ClassAccessor;
 use DateTimeInterface;
 use DateTime;
 use DateTimeImmutable;
-use dooaki\ClassAccessor\AccessorCommon;
+use dooaki\ClassAccessor\TypeValidator;
 use stdClass;
 use TypeError;
 
@@ -38,11 +38,11 @@ class ObjectAccessorTest extends \PHPUnit_Framework_TestCase
         // declare ObjectAccessorTestImpl
         eval(
             "namespace " . __NAMESPACE__ . ";\n"
-            . "use " . AccessorCommon::class . ";\n"
+            . "use " . TypeValidator::class . ";\n"
             . <<<'_CODE'
         class ObjectAccessorTestImpl {
             
-            use AccessorCommon, DateTimeAccessor {
+            use TypeValidator, DateTimeAccessor {
                 _helperDateTimeObjectGetter as public getDateTime;
                 _helperDateTimeObjectSetter as public setDateTime;
                 _helperDateTimeInterfaceObjectOrNullGetter as public getNullable;

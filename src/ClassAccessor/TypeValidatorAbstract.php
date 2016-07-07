@@ -7,7 +7,7 @@ namespace dooaki\ClassAccessor;
  *
  * @author  do_aki <do_aki@gmail.com>
  */
-trait AccessorCommonAbstract
+trait TypeValidatorAbstract
 {
     abstract protected function validatePrimitiveType($value, $type, $message_format = '');
     abstract protected function validatePrimitiveTypeOrNull($value, $type, $message_format = '');

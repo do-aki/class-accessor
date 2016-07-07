@@ -9,7 +9,7 @@ use TypeError;
  *
  * @author  do_aki <do_aki@gmail.com>
  */
-trait AccessorCommon
+trait TypeValidator
 {
     /**
      * validator for primitive type
