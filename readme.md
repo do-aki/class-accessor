@@ -61,7 +61,7 @@ Description
 
 `\dooaki\ClassAccessor\Accessor` trait generates type constrained getter/setter for your class.
 
-you can use `(get|set)(Int|Float|String|Bool|Array|Callable|Resource)(OrNull)?` method.
+you can use `_helper(Int|Float|String|Bool|Array|Callable|Resource)(OrNull)?(Getter|Setter)` method.
 
 
 make_accessor command
