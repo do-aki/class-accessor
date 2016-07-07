@@ -9,6 +9,6 @@ namespace dooaki\ClassAccessor;
  */
 trait Accessor
 {
-    use AccessorCommon;
+    use TypeValidator;
     use PrimitiveAccessor;
 }

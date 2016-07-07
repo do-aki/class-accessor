@@ -8,7 +8,7 @@ namespace dooaki\ClassAccessor;
  */
 trait PrimitiveAccessor {
 
-    use AccessorCommonAbstract;
+    use TypeValidatorAbstract;
 
     /**
      * @return int
