@@ -45,13 +45,13 @@ EOC;
     /**
      * @return %TYPE%
      */
-    private function _helper%TYPE_U%Getter() 
+    private function _helper%TYPE_U%Getter()
     {
         static $name;
         if (!$name) {
             $name = AccessorUtility::getAccessingPropertyName();
         }
-        
+
         $value = $this->$name;
         $this->validatePrimitiveType($value, '%TYPE%', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
@@ -91,7 +91,7 @@ _TPL;
         if (!$name) {
             $name = AccessorUtility::getAccessingPropertyName();
         }
-        
+
         $value = $this->$name;
         $this->validatePrimitiveTypeOrNull($value, '%TYPE%', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;

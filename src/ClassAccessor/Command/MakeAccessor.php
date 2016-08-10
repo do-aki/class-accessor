@@ -40,7 +40,7 @@ class MakeAccessor
     public function setClassList(array $class_list)
     {
         foreach ($class_list as $cls) {
-            if (!class_exists($cls) && !interface_exists($cls) ) {
+            if (!class_exists($cls) && !interface_exists($cls)) {
                 throw new \InvalidArgumentException("class '{$cls}' is not exists");
             }
         }
@@ -57,7 +57,7 @@ class MakeAccessor
         if (!$this->trait_namespace || !$this->trait_basename || !$this->class_list || !$this->output_file) {
             throw new \BadMethodCallException('invalid state');
         }
-        
+
         $code = (new AccessorMaker(new ObjectTypeMethods()))
             ->makeAccessor($this->trait_namespace, $this->trait_basename, $this->class_list);
         file_put_contents($this->output_file, "<?php\n" . $code);
@@ -79,7 +79,7 @@ class MakeAccessor
         if ($opts['help'] || empty($opts['name']) || empty($opts['class']) || empty($opts['file'])) {
             self::usage();
         }
-        
+
         try {
             $maker = new self($opts['name'], $opts['class'], $opts['file']);
             $maker->make();

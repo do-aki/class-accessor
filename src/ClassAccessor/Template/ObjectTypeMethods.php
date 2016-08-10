@@ -44,7 +44,7 @@ EOC;
 
     protected function getGetMethodTemplate()
     {
-            return <<< '_TPL'
+        return <<< '_TPL'
     /**
      * @return %TYPE%
      */

@@ -10,8 +10,10 @@ namespace dooaki\ClassAccessor;
 trait TypeValidatorAbstract
 {
     abstract protected function validatePrimitiveType($value, $type, $message_format = '');
+
     abstract protected function validatePrimitiveTypeOrNull($value, $type, $message_format = '');
 
     abstract protected function validateObjectType($value, $type, $message_format = '');
+
     abstract protected function validateObjectTypeOrNull($value, $type, $message_format = '');
 }

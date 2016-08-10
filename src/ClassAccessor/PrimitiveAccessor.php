@@ -6,20 +6,21 @@ namespace dooaki\ClassAccessor;
  *
  * (auto generated code)
  */
-trait PrimitiveAccessor {
+trait PrimitiveAccessor
+{
 
     use TypeValidatorAbstract;
 
     /**
      * @return int
      */
-    private function _helperIntGetter() 
+    private function _helperIntGetter()
     {
         static $name;
         if (!$name) {
             $name = AccessorUtility::getAccessingPropertyName();
         }
-        
+
         $value = $this->$name;
         $this->validatePrimitiveType($value, 'int', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
@@ -49,7 +50,7 @@ trait PrimitiveAccessor {
         if (!$name) {
             $name = AccessorUtility::getAccessingPropertyName();
         }
-        
+
         $value = $this->$name;
         $this->validatePrimitiveTypeOrNull($value, 'int', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
@@ -73,13 +74,13 @@ trait PrimitiveAccessor {
     /**
      * @return float
      */
-    private function _helperFloatGetter() 
+    private function _helperFloatGetter()
     {
         static $name;
         if (!$name) {
             $name = AccessorUtility::getAccessingPropertyName();
         }
-        
+
         $value = $this->$name;
         $this->validatePrimitiveType($value, 'float', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
@@ -109,7 +110,7 @@ trait PrimitiveAccessor {
         if (!$name) {
             $name = AccessorUtility::getAccessingPropertyName();
         }
-        
+
         $value = $this->$name;
         $this->validatePrimitiveTypeOrNull($value, 'float', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
@@ -133,13 +134,13 @@ trait PrimitiveAccessor {
     /**
      * @return string
      */
-    private function _helperStringGetter() 
+    private function _helperStringGetter()
     {
         static $name;
         if (!$name) {
             $name = AccessorUtility::getAccessingPropertyName();
         }
-        
+
         $value = $this->$name;
         $this->validatePrimitiveType($value, 'string', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
@@ -169,7 +170,7 @@ trait PrimitiveAccessor {
         if (!$name) {
             $name = AccessorUtility::getAccessingPropertyName();
         }
-        
+
         $value = $this->$name;
         $this->validatePrimitiveTypeOrNull($value, 'string', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
@@ -193,13 +194,13 @@ trait PrimitiveAccessor {
     /**
      * @return bool
      */
-    private function _helperBoolGetter() 
+    private function _helperBoolGetter()
     {
         static $name;
         if (!$name) {
             $name = AccessorUtility::getAccessingPropertyName();
         }
-        
+
         $value = $this->$name;
         $this->validatePrimitiveType($value, 'bool', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
@@ -229,7 +230,7 @@ trait PrimitiveAccessor {
         if (!$name) {
             $name = AccessorUtility::getAccessingPropertyName();
         }
-        
+
         $value = $this->$name;
         $this->validatePrimitiveTypeOrNull($value, 'bool', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
@@ -253,13 +254,13 @@ trait PrimitiveAccessor {
     /**
      * @return array
      */
-    private function _helperArrayGetter() 
+    private function _helperArrayGetter()
     {
         static $name;
         if (!$name) {
             $name = AccessorUtility::getAccessingPropertyName();
         }
-        
+
         $value = $this->$name;
         $this->validatePrimitiveType($value, 'array', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
@@ -289,7 +290,7 @@ trait PrimitiveAccessor {
         if (!$name) {
             $name = AccessorUtility::getAccessingPropertyName();
         }
-        
+
         $value = $this->$name;
         $this->validatePrimitiveTypeOrNull($value, 'array', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
@@ -313,13 +314,13 @@ trait PrimitiveAccessor {
     /**
      * @return callable
      */
-    private function _helperCallableGetter() 
+    private function _helperCallableGetter()
     {
         static $name;
         if (!$name) {
             $name = AccessorUtility::getAccessingPropertyName();
         }
-        
+
         $value = $this->$name;
         $this->validatePrimitiveType($value, 'callable', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
@@ -349,7 +350,7 @@ trait PrimitiveAccessor {
         if (!$name) {
             $name = AccessorUtility::getAccessingPropertyName();
         }
-        
+
         $value = $this->$name;
         $this->validatePrimitiveTypeOrNull($value, 'callable', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
@@ -373,13 +374,13 @@ trait PrimitiveAccessor {
     /**
      * @return resource
      */
-    private function _helperResourceGetter() 
+    private function _helperResourceGetter()
     {
         static $name;
         if (!$name) {
             $name = AccessorUtility::getAccessingPropertyName();
         }
-        
+
         $value = $this->$name;
         $this->validatePrimitiveType($value, 'resource', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;
@@ -409,7 +410,7 @@ trait PrimitiveAccessor {
         if (!$name) {
             $name = AccessorUtility::getAccessingPropertyName();
         }
-        
+
         $value = $this->$name;
         $this->validatePrimitiveTypeOrNull($value, 'resource', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
         return $value;

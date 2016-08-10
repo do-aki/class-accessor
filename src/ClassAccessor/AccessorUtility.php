@@ -7,7 +7,8 @@ namespace dooaki\ClassAccessor;
  *
  * @author do_aki <do_aki@gmail.com>
  */
-class AccessorUtility {
+class AccessorUtility
+{
 
     /** @var string message format for primitive typed setter */
     const PRIMITIVE_SETTER_MESSAGE_FORMAT = 'Argument 1 passed to %s::%s must be %s, %s given';
@@ -41,7 +42,8 @@ class AccessorUtility {
      * @param mixed $value target
      * @return string type
      */
-    public static function getTypeName($value) {
+    public static function getTypeName($value)
+    {
         if (is_object($value)) {
             return get_class($value);
         }

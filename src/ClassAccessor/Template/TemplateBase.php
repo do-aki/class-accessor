@@ -7,7 +7,8 @@ namespace dooaki\ClassAccessor\Template;
  *
  * @author  do_aki <do_aki@gmail.com>
  */
-abstract class TemplateBase implements TemplateInterface {
+abstract class TemplateBase implements TemplateInterface
+{
 
     private $type_list;
 
@@ -43,7 +44,7 @@ abstract class TemplateBase implements TemplateInterface {
         }
 
         $code .= $this->getClassComment() . "\n";
-        $code .= "trait {$trait_name} {\n\n";
+        $code .= "trait {$trait_name}\n{\n\n";
         $code .= "    use TypeValidatorAbstract;\n\n";
         $code .= $methods;
         $code .= "}\n";
@@ -61,6 +62,8 @@ abstract class TemplateBase implements TemplateInterface {
     }
 
     abstract public function generateCode($type);
+
     abstract public function getClassComment();
+
     abstract public function getUseList();
 }

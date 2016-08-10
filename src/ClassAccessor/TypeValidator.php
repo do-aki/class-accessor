@@ -19,8 +19,11 @@ trait TypeValidator
      * @param string $message_format exception message format
      * @throws TypeError
      */
-    protected function validatePrimitiveType($value, $type, $message_format = AccessorUtility::PRIMITIVE_SETTER_MESSAGE_FORMAT)
-    {
+    protected function validatePrimitiveType(
+        $value,
+        $type,
+        $message_format = AccessorUtility::PRIMITIVE_SETTER_MESSAGE_FORMAT
+    ) {
         $validator = "is_{$type}";
         if (!$validator($value)) {
             throw new TypeError(
@@ -44,8 +47,11 @@ trait TypeValidator
      * @param string $message_format exception message format
      * @throws TypeError
      */
-    protected function validatePrimitiveTypeOrNull($value, $type, $message_format = AccessorUtility::PRIMITIVE_SETTER_MESSAGE_FORMAT)
-    {
+    protected function validatePrimitiveTypeOrNull(
+        $value,
+        $type,
+        $message_format = AccessorUtility::PRIMITIVE_SETTER_MESSAGE_FORMAT
+    ) {
         $validator = "is_{$type}";
         if ($value !== null && !$validator($value)) {
             throw new TypeError(
@@ -68,8 +74,11 @@ trait TypeValidator
      * @param string $message_format exception message format
      * @throws TypeError
      */
-    protected function validateObjectType($value, $type, $message_format = AccessorUtility::OBJECT_SETTER_MESSAGE_FORMAT)
-    {
+    protected function validateObjectType(
+        $value,
+        $type,
+        $message_format = AccessorUtility::OBJECT_SETTER_MESSAGE_FORMAT
+    ) {
         if (!is_a($value, $type)) {
             throw new TypeError(
                 sprintf(
@@ -91,8 +100,11 @@ trait TypeValidator
      * @param string $message_format exception message format
      * @throws TypeError
      */
-    protected function validateObjectTypeOrNull($value, $type, $message_format = AccessorUtility::OBJECT_SETTER_MESSAGE_FORMAT)
-    {
+    protected function validateObjectTypeOrNull(
+        $value,
+        $type,
+        $message_format = AccessorUtility::OBJECT_SETTER_MESSAGE_FORMAT
+    ) {
         if ($value !== null && !is_a($value, $type)) {
             throw new TypeError(
                 sprintf(
