@@ -18,6 +18,8 @@ class PrimitiveTypeMethods extends TemplateBase
                 $this->getSetMethodTemplate(),
                 $this->getGetOrNullMethodTemplate(),
                 $this->getSetOrNullMethodTemplate(),
+                $this->getGetTraversableMethodTemplate(),
+                $this->getSetTraversableMethodTemplate(),
             ]
         );
         return str_replace('%TYPE_U%', ucfirst($type), str_replace('%TYPE%', $type, $tpl));
@@ -115,6 +117,46 @@ _TPL;
         }
 
         $this->validatePrimitiveTypeOrNull($value, '%TYPE%');
+        $this->$name = $value;
+    }
+_TPL;
+    }
+
+    protected function getGetTraversableMethodTemplate()
+    {
+        return <<< '_TPL'
+    /**
+     * @return %TYPE%[]
+     */
+    private function _helper%TYPE_U%TraversableGetter() 
+    {
+        static $name;
+        if (!$name) {
+            $name = AccessorUtility::getAccessingPropertyName();
+        }
+        
+        $value = $this->$name;
+        $this->validatePrimitiveTypeOfTraversable($value, '%TYPE%', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
+        return $value;
+    }
+_TPL;
+    }
+
+    protected function getSetTraversableMethodTemplate()
+    {
+        return <<< '_TPL'
+    /**
+     * @param %TYPE%[] $value
+     * @return void
+     */
+    private function _helper%TYPE_U%TraversableSetter($value)
+    {
+        static $name;
+        if (!$name) {
+            $name = AccessorUtility::getAccessingPropertyName();
+        }
+
+        $this->validatePrimitiveTypeOfTraversable($value, '%TYPE%');
         $this->$name = $value;
     }
 _TPL;

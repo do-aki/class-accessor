@@ -16,4 +16,32 @@ trait TypeValidatorAbstract
     abstract protected function validateObjectType($value, $type, $message_format = '');
 
     abstract protected function validateObjectTypeOrNull($value, $type, $message_format = '');
+
+    abstract protected function validatePrimitiveTypeOfTraversable(
+        $value,
+        $type,
+        $message_format_arg = '',
+        $message_format_value = ''
+    );
+
+    abstract protected function validatePrimitiveTypeOrNullOfTraversable(
+        $value,
+        $type,
+        $message_format_arg = '',
+        $message_format_value = ''
+    );
+
+    abstract protected function validateObjectTypeOfTraversable(
+        $value,
+        $type,
+        $message_format_arg = '',
+        $message_format_value = ''
+    );
+
+    abstract protected function validateObjectTypeOrNullOfTraversable(
+        $value,
+        $type,
+        $message_format_arg = '',
+        $message_format_value = ''
+    );
 }

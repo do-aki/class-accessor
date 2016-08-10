@@ -20,6 +20,12 @@ class AccessorUtility
     /** @var string message format for object typed getter */
     const OBJECT_GETTER_MESSAGE_FORMAT = 'Return value of %s::%s must be an instance of %s, %s returned';
 
+    /** @var string message format for primitive typed setter */
+    const TRAVERSABLE_SETTER_MESSAGE_FORMAT = 'Argument 1 passed to %s::%s must be %s[], %s included';
+
+    /** @var string message format for primitive typed setter */
+    const TRAVERSABLE_GETTER_MESSAGE_FORMAT = 'Return value of %s::%s must be %s[], %s included';
+
     /**
      * get accessing property name
      *

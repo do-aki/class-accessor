@@ -72,6 +72,36 @@ trait PrimitiveAccessor
     }
 
     /**
+     * @return int[]
+     */
+    private function _helperIntTraversableGetter() 
+    {
+        static $name;
+        if (!$name) {
+            $name = AccessorUtility::getAccessingPropertyName();
+        }
+        
+        $value = $this->$name;
+        $this->validatePrimitiveTypeOfTraversable($value, 'int', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
+        return $value;
+    }
+
+    /**
+     * @param int[] $value
+     * @return void
+     */
+    private function _helperIntTraversableSetter($value)
+    {
+        static $name;
+        if (!$name) {
+            $name = AccessorUtility::getAccessingPropertyName();
+        }
+
+        $this->validatePrimitiveTypeOfTraversable($value, 'int');
+        $this->$name = $value;
+    }
+
+    /**
      * @return float
      */
     private function _helperFloatGetter()
@@ -128,6 +158,36 @@ trait PrimitiveAccessor
         }
 
         $this->validatePrimitiveTypeOrNull($value, 'float');
+        $this->$name = $value;
+    }
+
+    /**
+     * @return float[]
+     */
+    private function _helperFloatTraversableGetter() 
+    {
+        static $name;
+        if (!$name) {
+            $name = AccessorUtility::getAccessingPropertyName();
+        }
+        
+        $value = $this->$name;
+        $this->validatePrimitiveTypeOfTraversable($value, 'float', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
+        return $value;
+    }
+
+    /**
+     * @param float[] $value
+     * @return void
+     */
+    private function _helperFloatTraversableSetter($value)
+    {
+        static $name;
+        if (!$name) {
+            $name = AccessorUtility::getAccessingPropertyName();
+        }
+
+        $this->validatePrimitiveTypeOfTraversable($value, 'float');
         $this->$name = $value;
     }
 
@@ -192,6 +252,36 @@ trait PrimitiveAccessor
     }
 
     /**
+     * @return string[]
+     */
+    private function _helperStringTraversableGetter() 
+    {
+        static $name;
+        if (!$name) {
+            $name = AccessorUtility::getAccessingPropertyName();
+        }
+        
+        $value = $this->$name;
+        $this->validatePrimitiveTypeOfTraversable($value, 'string', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
+        return $value;
+    }
+
+    /**
+     * @param string[] $value
+     * @return void
+     */
+    private function _helperStringTraversableSetter($value)
+    {
+        static $name;
+        if (!$name) {
+            $name = AccessorUtility::getAccessingPropertyName();
+        }
+
+        $this->validatePrimitiveTypeOfTraversable($value, 'string');
+        $this->$name = $value;
+    }
+
+    /**
      * @return bool
      */
     private function _helperBoolGetter()
@@ -248,6 +338,36 @@ trait PrimitiveAccessor
         }
 
         $this->validatePrimitiveTypeOrNull($value, 'bool');
+        $this->$name = $value;
+    }
+
+    /**
+     * @return bool[]
+     */
+    private function _helperBoolTraversableGetter() 
+    {
+        static $name;
+        if (!$name) {
+            $name = AccessorUtility::getAccessingPropertyName();
+        }
+        
+        $value = $this->$name;
+        $this->validatePrimitiveTypeOfTraversable($value, 'bool', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
+        return $value;
+    }
+
+    /**
+     * @param bool[] $value
+     * @return void
+     */
+    private function _helperBoolTraversableSetter($value)
+    {
+        static $name;
+        if (!$name) {
+            $name = AccessorUtility::getAccessingPropertyName();
+        }
+
+        $this->validatePrimitiveTypeOfTraversable($value, 'bool');
         $this->$name = $value;
     }
 
@@ -312,6 +432,36 @@ trait PrimitiveAccessor
     }
 
     /**
+     * @return array[]
+     */
+    private function _helperArrayTraversableGetter() 
+    {
+        static $name;
+        if (!$name) {
+            $name = AccessorUtility::getAccessingPropertyName();
+        }
+        
+        $value = $this->$name;
+        $this->validatePrimitiveTypeOfTraversable($value, 'array', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
+        return $value;
+    }
+
+    /**
+     * @param array[] $value
+     * @return void
+     */
+    private function _helperArrayTraversableSetter($value)
+    {
+        static $name;
+        if (!$name) {
+            $name = AccessorUtility::getAccessingPropertyName();
+        }
+
+        $this->validatePrimitiveTypeOfTraversable($value, 'array');
+        $this->$name = $value;
+    }
+
+    /**
      * @return callable
      */
     private function _helperCallableGetter()
@@ -372,6 +522,36 @@ trait PrimitiveAccessor
     }
 
     /**
+     * @return callable[]
+     */
+    private function _helperCallableTraversableGetter() 
+    {
+        static $name;
+        if (!$name) {
+            $name = AccessorUtility::getAccessingPropertyName();
+        }
+        
+        $value = $this->$name;
+        $this->validatePrimitiveTypeOfTraversable($value, 'callable', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
+        return $value;
+    }
+
+    /**
+     * @param callable[] $value
+     * @return void
+     */
+    private function _helperCallableTraversableSetter($value)
+    {
+        static $name;
+        if (!$name) {
+            $name = AccessorUtility::getAccessingPropertyName();
+        }
+
+        $this->validatePrimitiveTypeOfTraversable($value, 'callable');
+        $this->$name = $value;
+    }
+
+    /**
      * @return resource
      */
     private function _helperResourceGetter()
@@ -428,6 +608,36 @@ trait PrimitiveAccessor
         }
 
         $this->validatePrimitiveTypeOrNull($value, 'resource');
+        $this->$name = $value;
+    }
+
+    /**
+     * @return resource[]
+     */
+    private function _helperResourceTraversableGetter() 
+    {
+        static $name;
+        if (!$name) {
+            $name = AccessorUtility::getAccessingPropertyName();
+        }
+        
+        $value = $this->$name;
+        $this->validatePrimitiveTypeOfTraversable($value, 'resource', AccessorUtility::PRIMITIVE_GETTER_MESSAGE_FORMAT);
+        return $value;
+    }
+
+    /**
+     * @param resource[] $value
+     * @return void
+     */
+    private function _helperResourceTraversableSetter($value)
+    {
+        static $name;
+        if (!$name) {
+            $name = AccessorUtility::getAccessingPropertyName();
+        }
+
+        $this->validatePrimitiveTypeOfTraversable($value, 'resource');
         $this->$name = $value;
     }
 
